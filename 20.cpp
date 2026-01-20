@@ -32,22 +32,31 @@ int main(){
 
     //4st node
     Node* fourth = new Node();
-    fourth->data=30;
+    fourth->data=40;
     fourth->next= NULL;
     
     //connected 3nd to 4rd
     third-> next = fourth;
+    
+    Node* fifth = new Node();
+    fifth->data=50;
+    fifth->next= NULL;
+    
+    //connected 3nd to 4rd
+    fourth-> next = fifth;
 
-
-
-    // deletion at start
-    Node* del = first;
-    first=first-> next;
+    // deletion at a position
+    int pos= 4;
+    Node* temp = first;
+    for(int i=1;i<pos-1;i++){
+        temp=temp->next;
+    }
+    Node* del=temp->next;
+    temp->next=del->next;
     delete del;
     
-    
     // traversal
-    Node* temp = first;
+    temp = first;
     
     while(temp!=NULL){
     cout<<temp->data<<" ";

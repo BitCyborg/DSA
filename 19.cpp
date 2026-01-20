@@ -32,7 +32,7 @@ int main(){
 
     //4st node
     Node* fourth = new Node();
-    fourth->data=30;
+    fourth->data=40;
     fourth->next= NULL;
     
     //connected 3nd to 4rd
@@ -40,14 +40,19 @@ int main(){
 
 
 
-    // deletion at start
-    Node* del = first;
-    first=first-> next;
-    delete del;
-    
-    
-    // traversal
+    // deletion at end
+    Node* del=first;
     Node* temp = first;
+    while(temp->next->next!=NULL){
+        temp=temp->next;
+    }
+    delete temp-> next;
+    temp->next=NULL;
+    
+    
+    
+    
+    temp = first;
     
     while(temp!=NULL){
     cout<<temp->data<<" ";

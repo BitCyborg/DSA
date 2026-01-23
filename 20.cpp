@@ -46,9 +46,9 @@ int main(){
     fourth-> next = fifth;
 
     // deletion at a position
-    int pos= 4;
+    int key= 40;
     Node* temp = first;
-    for(int i=1;i<pos-1;i++){
+    while(temp->data != key)
         temp=temp->next;
     }
     Node* del=temp->next;

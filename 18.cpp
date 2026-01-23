@@ -37,25 +37,21 @@ int main(){
     
     //connected 3nd to 4rd
     third-> next = fourth;
-    
-    Node* fifth = new Node();
-    fifth->data=50;
-    fifth->next= NULL;
-    
-    //connected 3nd to 4rd
-    fourth-> next = fifth;
 
-    // deletion at a position
-    int pos= 4;
+
+
+    // deletion at end
+    Node* del=first;
     Node* temp = first;
-    for(int i=1;i<pos-1;i++){
+    while(temp->next->next!=NULL){
         temp=temp->next;
     }
-    Node* del=temp->next;
-    temp->next=del->next;
-    delete del;
+    delete temp-> next;
+    temp->next=NULL;
     
-    // traversal
+    
+    
+    
     temp = first;
     
     while(temp!=NULL){

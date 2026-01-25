@@ -44,17 +44,21 @@ int main(){
     
     //connected 3nd to 4rd
     fourth-> next = fifth;
+    
 
-    // deletion at a position
-    int key= 40;
-    Node* temp = first;
-
-    while(temp->data != key){
-        temp=temp->next;
+    //reverse a linked list
+    Node* temp= first;
+    Node* prev= NULL;
+    Node* curr= first;
+    Node* next= curr->next;
+    
+    while(curr->next !=NULL){
+        curr->next=prev;
+        prev=curr;
+        curr=next;
+        next=next->next;
     }
-    Node* del=temp->next;
-    temp->next=del->next;
-    delete del;
+    first=curr;
     
     // traversal
     temp = first;

@@ -1,9 +1,7 @@
-// Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
 
 int main() {
-    // Write C++ code here
     int arr[6]={10,20,30,40,50,60};
     int l=0;
     int n=6;
